@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Decommissioning>
+    <Category>Make My Trip</Category>
+    <Priority>4</Priority>
+	<Implemented>1</Implemented>
+	<Path>$FlightType$/$Class$/$traveltype$</Path>
+	<Description>
+		<Desc1>Test for make my trip $Class$ class</Desc1>
+		<Desc2>Test for make my trip login page</Desc2>
+	</Description>
+	<Prerequisite>
+		<Pre1>The Site page must be loaded</Pre1>
+	</Prerequisite>
+	<TestCaseIndex>1</TestCaseIndex>
+	<TestCaseName>Book $FlightType$ type ticket with travel condition $from-to$ and date condition $Departure-Return$ person type $Adult$ in class $Class$</TestCaseName>
+		<TestCaseDescription>
+			<StepsToExecute>
+				<Step1>Login to Make my trip GUI</Step1>
+				<Step2>Select $FlightType$</Step2>
+				<Step3>Select $traveltype$</Step3>
+				<Step4>Give condition $from-to$</Step4>
+				<Step5>Select class $class$</Step5>
+				<Step9>press submit</Step9>
+			</StepsToExecute>
+			<ExpectedResult>
+				<Res1>login successfull</Res1>
+				<Res2>$flighttype selected success$.</Res2>
+				<Res3>$traveltype$ selected</Res3>
+				<Res4>$from-to$ condition given</Res4>
+				<Res5>$class$ selected</Res5>
+				<Res6>submit happen</Res6>
+			</ExpectedResult>
+			<FinalExpectedResult>
+			<Fres1>$flighttype$ $traveltype$ booked</Fres1>
+			<Fres3>mail sent to user.</Fres3>
+			</FinalExpectedResult>
+		</TestCaseDescription>
+</Decommissioning>

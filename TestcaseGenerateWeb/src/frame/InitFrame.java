@@ -128,6 +128,7 @@ public class InitFrame extends Frame implements WindowListener, ActionListener
 	
 		
 	}
+	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Generate Test")) {

@@ -2,23 +2,85 @@ package operations;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.validation.Schema;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 
+import sun.java2d.loops.ProcessPath;
 import utilities.TestAttribute;
 
 import java.io.File;
 import java.util.ArrayList;
 
 public class InputXmlRead {
-	static String BoldStart = "[b]";
-	static String BoldEnd = "[/b]";
-	static String OrderedListStart = "[ol]";
-	static String OrderedListEnd = "[/ol]";
-	static String ListElementStart = "[li]";
-	static String ListElementEnd = "[/li]";
+	static final String BoldStart = "[b]";
+	static final String BoldEnd = "[/b]";
+	static final String OrderedListStart = "[ol]";
+	static final String OrderedListEnd = "[/ol]";
+	static final String ListElementStart = "[li]";
+	static final String ListElementEnd = "[/li]";
+//
+//	String processStepsToExecute(ArrayList<String>)
+//	{
+//		
+//		
+//		
+//		return "";
+//	}
+	
+	ArrayList<String> processNodeWithNoChild(Node inputNode, String separatorStart, String separatorEnd)
+	{
+		ArrayList<String> returnList = new ArrayList<>();
+		if(!separatorStart.equalsIgnoreCase("")){
+			returnList.add(separatorStart);
+			}
+		
+		returnList.add(inputNode.getTextContent());
+		if(!separatorEnd.equals("")){
+			returnList.add(separatorEnd);
+		}
+		return returnList;
+	}
+	
+	ArrayList<String> processNodeWithChild(Node inputNode, String separatorStart, String separatorEnd)
+	{
+		
+		
+		ArrayList<String> returnList = new ArrayList<>();
+		
+		if(!separatorStart.equals("")){
+		returnList.add(separatorStart);
+		}
+		returnList.add(OrderedListStart);
+		
+		NodeList objNodeList = inputNode.getChildNodes();
+		System.out.println("Number of child node is "+objNodeList.getLength());
+		for (int j = 0; j < objNodeList.getLength(); j++) {
+			Node pcdNode = objNodeList.item(j);
+			pcdNode.getTextContent().trim();
+			if(pcdNode.hasChildNodes())
+			{
+				System.out.println("Node "+pcdNode.getNodeName()+" has child node");
+				returnList.addAll(processNodeWithChild(pcdNode, "", ""));
+			}
+			
+			if(pcdNode.getNodeType() == Node.ELEMENT_NODE) {
+				returnList.add(ListElementStart+ pcdNode.getTextContent()+ ListElementEnd);
+			}
+		}
+		if(!separatorEnd.equals("")){
+		returnList.add(separatorEnd);
+		}
+		returnList.add(OrderedListEnd);
+		return returnList;
+	}
+	
 
+	
+	
+	
 	ArrayList<String> processXMltoList() {
 		String tempModifiedString = null;
 		TestAttribute.mylogger.info("Entered processXMltoList");
@@ -28,9 +90,11 @@ public class InputXmlRead {
 			TestAttribute.mylogger.info("XML File Path is set to "+TestAttribute.testStepsXmlInputPath);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory
 					.newInstance();
+			dbFactory.setIgnoringElementContentWhitespace(true);
+			//dbFactory.setSchema(schema);
+			dbFactory.setNamespaceAware(true);
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
-
 			doc.getDocumentElement().normalize();
 			Node rootNode = doc.getDocumentElement();
 			TestAttribute.mylogger.info("Root element :" + rootNode.getNodeName());
@@ -57,88 +121,27 @@ public class InputXmlRead {
 					}
 					if (HeadingNode.getNodeName().equalsIgnoreCase("Path")) {
 						TestAttribute.mylogger.info("XML element found "+HeadingNode.getNodeName());
-						testparameterList.add("PATHSTART");
-						testparameterList.add(HeadingNode.getTextContent());
-						testparameterList.add("PATHEND");
+						testparameterList.addAll(processNodeWithNoChild(HeadingNode,"PATHSTART","PATHEND"));						
 						System.out.println("pathPut");
 					}
 
 					if (HeadingNode.getNodeName().equalsIgnoreCase(
 							"TestCaseName")) {
 						TestAttribute.mylogger.info("XML element found "+HeadingNode.getNodeName());
-						testparameterList.add("TCNAMESTART");
-						testparameterList.add(HeadingNode.getTextContent());
-						testparameterList.add("TCNAMEEND");
+						testparameterList.addAll(processNodeWithNoChild(HeadingNode,"TCNAMESTART","TCNAMEEND"));
 						System.out.println("TCaseNamePut");
 					}
 
 					if (HeadingNode.getNodeName().equalsIgnoreCase(
 							"Prerequisite")) {
-						// Mark start of Prerequisite
 						TestAttribute.mylogger.info("XML element found "+HeadingNode.getNodeName());
-						testparameterList.add("PREREQUISITESTART");
-						NodeList preNodeList = HeadingNode.getChildNodes();
-						for (int j = 0; j < preNodeList.getLength(); j++) {
-							Node pcdNode = preNodeList.item(j);
-
-							if (pcdNode.getNodeType() == Node.ELEMENT_NODE) {
-								/*
-								 * System.out.println(stepNode .getNodeName() +
-								 * " contains " + stepNode.getTextContent());
-								 */
-								tempModifiedString = ListElementStart
-										+ pcdNode.getTextContent()
-										+ ListElementEnd;
-								testparameterList.add(tempModifiedString);
-							}
-//							if (pcdNode.hasChildNodes())// more child node
-//							{
-//								NodeList preChildNodeList = pcdNode
-//										.getChildNodes();
-//
-//								tempModifiedString = OrderedListStart;
-//								testparameterList.add(tempModifiedString);
-//								for (int k = 0; k < preChildNodeList
-//										.getLength(); k++) {
-//									Node preChildNode = preChildNodeList
-//											.item(k);
-//									if (preChildNode.getNodeType() == Node.ELEMENT_NODE) {
-//										tempModifiedString = ListElementStart
-//												+ preChildNode.getTextContent()
-//												+ ListElementEnd;
-//										testparameterList
-//												.add(tempModifiedString);
-//									}
-//								}
-//								tempModifiedString = OrderedListEnd;
-//								testparameterList.add(tempModifiedString);
-//							}
-
-						}
-						testparameterList.add("PREREQUISITEEND");
-
+						testparameterList.addAll(processNodeWithChild(HeadingNode, "PREREQUISITESTART", "PREREQUISITEEND"));
 					}
 
 					if (HeadingNode.getNodeName().equalsIgnoreCase(
 							"Description")) {
 						TestAttribute.mylogger.info("XML element found "+HeadingNode.getNodeName());
-						testparameterList.add("DESCRIPTIONSTART");
-						NodeList descNodeList = HeadingNode.getChildNodes();
-						for (int j = 0; j < descNodeList.getLength(); j++) {
-							Node descNode = descNodeList.item(j);
-							if (descNode.getNodeType() == Node.ELEMENT_NODE) {
-								/*
-								 * System.out.println(stepNode .getNodeName() +
-								 * " contains " + stepNode.getTextContent());
-								 */
-								tempModifiedString = ListElementStart
-										+ descNode.getTextContent()
-										+ ListElementEnd;
-								testparameterList.add(tempModifiedString);
-							}
-						}
-						testparameterList.add("DESCRIPTIONEND");
-
+						testparameterList.addAll(processNodeWithChild(HeadingNode, "DESCRIPTIONSTART", "DESCRIPTIONEND"));
 					}
 
 					if (HeadingNode.getNodeName().equalsIgnoreCase(

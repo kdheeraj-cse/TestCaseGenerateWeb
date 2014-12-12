@@ -13,5 +13,6 @@ public class TestAttribute {
 	public static HashMap<String, String> objtestAttr = new HashMap<String, String>();
 	public static Logger mylogger = Logger.getLogger("MyLog");
 	public static String logPath = "FileFolder/Logs/log";
+	public final static String inputJSONFile = "FileFolder/TestCase.json";
 
 }

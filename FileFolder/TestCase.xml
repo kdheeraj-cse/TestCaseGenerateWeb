@@ -10,6 +10,10 @@
 	</Description>
 	<Prerequisite>
 		<Pre1>The Site page must be loaded</Pre1>
+					<SubSteps>
+					<SubStep1>Step one</SubStep1>
+					<SubStep2>Step two</SubStep2>
+					</SubSteps>
 	</Prerequisite>
 	<TestCaseIndex>1</TestCaseIndex>
 	<TestCaseName>Book $FlightType$ type ticket with travel condition $from-to$ and date condition $Departure-Return$ person type $Adult$ in class $Class$</TestCaseName>

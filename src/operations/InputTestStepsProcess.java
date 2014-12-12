@@ -2,7 +2,10 @@ package operations;
 import utilities.*;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.simple.parser.ParseException;
 
 
 public class InputTestStepsProcess {
@@ -10,16 +13,20 @@ public class InputTestStepsProcess {
 	FileReader objFileReader = null;
 	
 	InputXmlRead objInputXmlRead = new InputXmlRead();
-	public void openAndReadXmlFile() {    
+	InputJsonRead objInputJsonRead = new InputJsonRead();
+	public void openAndReadXmlFile() throws IOException, ParseException {    
 		TestAttribute.mylogger.info("Entered openAndReadXmlFile and delimiter charcter is "+delimitCharacter);
 		
 		String testLine = null;
 		
-			ArrayList<String> inputTestXmlSteps = new ArrayList<String>();
-			inputTestXmlSteps=objInputXmlRead.processXMltoList();
-			TestAttribute.mylogger.info("Done with XML file read, and return value is "+ !inputTestXmlSteps.isEmpty());
-			for (int i = 0; i < inputTestXmlSteps.size(); i++) {
-				testLine = inputTestXmlSteps.get(i);
+			ArrayList<String> inputTestSteps = new ArrayList<String>();
+//			inputTestXmlSteps=objInputXmlRead.processXMltoList();
+			inputTestSteps = objInputJsonRead.processJSONtoList();
+			TestAttribute.mylogger.info("Done with XML file read, and return value is "+ !inputTestSteps.isEmpty());
+			System.out.println("Done with XML file read, and return value is "+ !inputTestSteps.isEmpty());
+			for (int i = 0; i < inputTestSteps.size(); i++) {
+				testLine = inputTestSteps.get(i);
+				System.out.println("testline"+testLine);
 				findPositionToChange(testLine.trim());
 			}
 	}

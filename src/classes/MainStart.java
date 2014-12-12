@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
+
+import org.json.simple.parser.ParseException;
+
 import operations.*;
 import utilities.TestAttribute;
 import jxl.read.biff.BiffException;
@@ -62,7 +65,15 @@ public class MainStart {
 		// ----------------------------------- One value is stored then open the
 		// xml and prcess and changes the steps
 
-		objInputTestStepsProcess.openAndReadXmlFile();
+		try {
+			objInputTestStepsProcess.openAndReadXmlFile();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		// ---------------------------------------------------------------
 

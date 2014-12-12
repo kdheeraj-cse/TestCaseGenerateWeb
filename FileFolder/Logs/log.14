@@ -1,0 +1,92 @@
+Dec 12, 2014 6:48:06 PM classes.MainStart <init>
+INFO: ********************************************
+Dec 12, 2014 6:48:07 PM classes.MainStart <init>
+INFO: LOG FILE Intialized and start
+Dec 12, 2014 6:48:08 PM classes.MainStart isXMLPresent
+INFO: Input Test XML file found
+Dec 12, 2014 6:48:08 PM classes.MainStart isEXCELPresent
+INFO: Input Excel Data file found
+Dec 12, 2014 6:48:14 PM operations.ExcelOperations excelSheetRead
+INFO: Entered excelSheetRead function in ExcelOperations
+Dec 12, 2014 6:48:14 PM utilities.ExcelRead setAndInitiateInputExcelFile
+INFO: Excel file path set to FileFolder/Data.xls
+Dec 12, 2014 6:48:14 PM utilities.ExcelRead readExcelSheet
+INFO: Entered readExcelSheet in ExcelRead
+Dec 12, 2014 6:48:14 PM utilities.ExcelRead readExcelSheet
+INFO: Done with excel sheet read, Total read was 55 rows and 7 columns
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess openAndReadXmlFile
+INFO: Entered openAndReadXmlFile and delimiter charcter is $
+Dec 12, 2014 6:48:14 PM operations.InputJsonRead processJSONtoList
+INFO: Entered processJSONtoList
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess openAndReadXmlFile
+INFO: Done with XML file read, and return value is true
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input PATHSTART
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input $FlightType$/$Class$/$traveltype$
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input PATHEND
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input TCNAMESTART
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input Book $FlightType$ type ticket with travel condition $from-to$ and date condition $Departure-Return$ person type $Adult$ in class $Class$
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input TCNAMEEND
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input TCDDESCRIPTIONSTART
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [b]StepsToExecute[/b]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [ol]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]Select $traveltype$[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]Select $FlightType$[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]Login to Make my trip GUI[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]press submit[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]Select class $class$[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]Give condition $from-to$[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [/ol]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [b]ExpectedResult[/b]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [ol]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]$from-to$ condition given[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]$traveltype$ selected[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]$flighttype selected success$[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]login successfull[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]submit happen[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]$class$ selected[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [/ol]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [b]FinalExpectedResult[/b]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [ol]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]$flighttype$ $traveltype$ booked[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [li]mail sent to user[/li]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input [/ol]
+Dec 12, 2014 6:48:14 PM operations.InputTestStepsProcess findPositionToChange
+INFO: In function findPositionToChange with input TCDDESCRIPTIONEND
+Dec 12, 2014 6:48:14 PM operations.ExcelOperations xlSheetInitForWrite
+INFO: Initiating Excel sheet for writing
+Dec 12, 2014 6:48:15 PM utilities.ExcelWrite initiateSheet
+INFO: Output excel sheet is initiated with pathFileFolder/Output.xls
+Dec 12, 2014 6:48:15 PM operations.ExcelOperations xlSheetInitForWrite
+INFO: Initiating Excel sheet for writing done with status true
+Dec 12, 2014 6:48:15 PM operations.InputTestStepsProcess SetHashMap
+INFO: Hash map set for test case number :0

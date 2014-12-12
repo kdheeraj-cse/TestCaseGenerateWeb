@@ -1,0 +1,30 @@
+Dec 12, 2014 6:45:20 PM classes.MainStart <init>
+INFO: ********************************************
+Dec 12, 2014 6:45:21 PM classes.MainStart <init>
+INFO: LOG FILE Intialized and start
+Dec 12, 2014 6:45:22 PM classes.MainStart isXMLPresent
+INFO: Input Test XML file found
+Dec 12, 2014 6:45:22 PM classes.MainStart isEXCELPresent
+INFO: Input Excel Data file found
+Dec 12, 2014 6:45:26 PM operations.ExcelOperations excelSheetRead
+INFO: Entered excelSheetRead function in ExcelOperations
+Dec 12, 2014 6:45:26 PM utilities.ExcelRead setAndInitiateInputExcelFile
+INFO: Excel file path set to FileFolder/Data.xls
+Dec 12, 2014 6:45:26 PM utilities.ExcelRead readExcelSheet
+INFO: Entered readExcelSheet in ExcelRead
+Dec 12, 2014 6:45:26 PM utilities.ExcelRead readExcelSheet
+INFO: Done with excel sheet read, Total read was 55 rows and 7 columns
+Dec 12, 2014 6:45:26 PM operations.InputTestStepsProcess openAndReadXmlFile
+INFO: Entered openAndReadXmlFile and delimiter charcter is $
+Dec 12, 2014 6:45:26 PM operations.InputJsonRead processJSONtoList
+INFO: Entered processJSONtoList
+Dec 12, 2014 6:45:26 PM operations.InputTestStepsProcess openAndReadXmlFile
+INFO: Done with XML file read, and return value is true
+Dec 12, 2014 6:45:26 PM operations.ExcelOperations xlSheetInitForWrite
+INFO: Initiating Excel sheet for writing
+Dec 12, 2014 6:45:26 PM utilities.ExcelWrite initiateSheet
+INFO: Output excel sheet is initiated with pathFileFolder/Output.xls
+Dec 12, 2014 6:45:26 PM operations.ExcelOperations xlSheetInitForWrite
+INFO: Initiating Excel sheet for writing done with status true
+Dec 12, 2014 6:45:26 PM operations.InputTestStepsProcess SetHashMap
+INFO: Hash map set for test case number :0

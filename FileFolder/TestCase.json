@@ -1,0 +1,37 @@
+{
+"TestType":"Travel",
+"Category":"Make my Trip",
+"Priority":"4",
+"Implemented":"1",
+"Path":"$FlightType$/$Class$/$traveltype$",
+"Description":"Test for make my trip $Class$ class",
+"Prerequisite":"The Site page must be loaded",
+"TestCaseIndex":"1",
+"TestCaseName":"Book $FlightType$ type ticket with travel condition $from-to$ and date condition $Departure-Return$ person type $Adult$ in class $Class$",
+"TestCaseDescription":{
+						"StepsToExecute":{
+											"Step1":"Login to Make my trip GUI",
+											"SubStep":{
+														"SStep1":"Enter Login ID",
+														"SStep2":"Enter Passsword"
+													  },
+											"Step2":"Select $FlightType$",
+											"Step3":"Select $traveltype$",
+											"Step4":"Give condition $from-to$",
+											"Step5":"Select class $class$",
+											"Step6":"press submit"
+										 },
+						"ExpectedResult":{
+											"Result1":"login successfull",
+											"Result2":"$flighttype selected success$",
+											"Result3":"$traveltype$ selected",
+											"Result4":"$from-to$ condition given",
+											"Result5":"$class$ selected",
+											"Result6":"submit happen"
+										 },
+						"FinalExpectedResult":{
+												"FResult1":"$flighttype$ $traveltype$ booked",
+												"FResult2":"mail sent to user"
+												}
+						}
+}

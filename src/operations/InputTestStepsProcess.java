@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.apache.wink.json4j.JSONException;
 import org.json.simple.parser.ParseException;
 
 
@@ -12,18 +13,14 @@ public class InputTestStepsProcess {
 	Character delimitCharacter = '$';
 	FileReader objFileReader = null;
 	
-	InputXmlRead objInputXmlRead = new InputXmlRead();
 	InputJsonRead objInputJsonRead = new InputJsonRead();
-	public void openAndReadXmlFile() throws IOException, ParseException {    
+	public void openAndReadXmlFile() throws IOException, ParseException, JSONException {    
 		TestAttribute.mylogger.info("Entered openAndReadXmlFile and delimiter charcter is "+delimitCharacter);
-		
 		String testLine = null;
 		
 			ArrayList<String> inputTestSteps = new ArrayList<String>();
-//			inputTestXmlSteps=objInputXmlRead.processXMltoList();
-			inputTestSteps = objInputJsonRead.processJSONtoList();
-			TestAttribute.mylogger.info("Done with XML file read, and return value is "+ !inputTestSteps.isEmpty());
-			System.out.println("Done with XML file read, and return value is "+ !inputTestSteps.isEmpty());
+			inputTestSteps = objInputJsonRead.processJSONToList();
+			TestAttribute.mylogger.info("Done with JSON file read, and return value is "+ !inputTestSteps.isEmpty());
 			for (int i = 0; i < inputTestSteps.size(); i++) {
 				testLine = inputTestSteps.get(i);
 				System.out.println("testline"+testLine);
@@ -86,11 +83,11 @@ public class InputTestStepsProcess {
 				TestAttribute.objtestAttr.put("Path", formattedPath);
 				
 			}
-			if(objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TCNAMESTART"))
+			if(objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TESTCASENAMESTART"))
 			{
 				indexForTestSteps++;
 				String formattedTestName = null;
-				while (!objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TCNAMEEND")) {
+				while (!objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TESTCASENAMEEND")) {
 					formattedTestName=formatTestCaseLine(testCaseNumber,objectForTestSteps.get(indexForTestSteps),indexForTestSteps);
 					TestAttribute.objtestAttr.put("TestCaseName", formattedTestName);
 					indexForTestSteps++;
@@ -119,11 +116,11 @@ public class InputTestStepsProcess {
 				}
 				TestAttribute.objtestAttr.put("Description", descOneLine.toString());
 			}
-			if(objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TCDDESCRIPTIONSTART"))
+			if(objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TESTCASEDESCRIPTIONSTART"))
 			{
 				indexForTestSteps++;
 				StringBuilder stepOneLine = new StringBuilder();
-				while (!objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TCDDESCRIPTIONEND")) {
+				while (!objectForTestSteps.get(indexForTestSteps).equalsIgnoreCase("TESTCASEDESCRIPTIONEND")) {
 					stepOneLine.append(formatTestCaseLine(testCaseNumber, objectForTestSteps.get(indexForTestSteps), indexForTestSteps));
 					indexForTestSteps++;
 				}

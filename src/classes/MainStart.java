@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
+import org.apache.wink.json4j.JSONException;
 import org.json.simple.parser.ParseException;
 
 import operations.*;
@@ -29,7 +30,7 @@ public class MainStart {
 	}
 
 	public boolean isXMLPresent() {
-		File file = new File(TestAttribute.testStepsXmlInputPath);
+		File file = new File(TestAttribute.inputJSONFile);
 		if (file.exists()) {
 			TestAttribute.mylogger.info("Input Test XML file found");
 			return true;
@@ -73,6 +74,9 @@ public class MainStart {
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		// ---------------------------------------------------------------

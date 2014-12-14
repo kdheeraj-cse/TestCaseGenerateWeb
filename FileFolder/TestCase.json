@@ -4,8 +4,12 @@
 "Priority":"4",
 "Implemented":"1",
 "Path":"$FlightType$/$Class$/$traveltype$",
-"Description":"Test for make my trip $Class$ class",
-"Prerequisite":"The Site page must be loaded",
+"Description":{"Desc1":"Ticket booking test Cases",
+			   "Desc2":"Pairwise"
+				},
+"Prerequisite":{"Preq1":"The Site page must be loaded",
+				"Preq2":"All the buttons must be visible"
+				},
 "TestCaseIndex":"1",
 "TestCaseName":"Book $FlightType$ type ticket with travel condition $from-to$ and date condition $Departure-Return$ person type $Adult$ in class $Class$",
 "TestCaseDescription":{
@@ -19,11 +23,15 @@
 											"Step3":"Select $traveltype$",
 											"Step4":"Give condition $from-to$",
 											"Step5":"Select class $class$",
-											"Step6":"press submit"
+											"Step6":"press submit",
+											"SubStep":{
+														"SStep1":"Find submit",
+														"SStep2":"Click SUbmit"
+											}
 										 },
 						"ExpectedResult":{
 											"Result1":"login successfull",
-											"Result2":"$flighttype selected success$",
+											"Result2":"$flighttype$ selected success",
 											"Result3":"$traveltype$ selected",
 											"Result4":"$from-to$ condition given",
 											"Result5":"$class$ selected",

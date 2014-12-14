@@ -3,152 +3,95 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Set;
+import java.util.Iterator;
+import java.util.logging.Logger;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-import org.json.simple.parser.JSONParser;
-import org.w3c.dom.Node;
+import org.apache.wink.json4j.JSONException;
+import org.apache.wink.json4j.OrderedJSONObject;
 
+import utilities.Constant;
 import utilities.TestAttribute;
 
-
 public class InputJsonRead {
-	static final String BoldStart = "[b]";
-	static final String BoldEnd = "[/b]";
-	static final String OrderedListStart = "[ol]";
-	static final String OrderedListEnd = "[/ol]";
-	static final String ListElementStart = "[li]";
-	static final String ListElementEnd = "[/li]";
 	
-	
-	void setTestAttribute(JSONObject objJsonObject)
-	{
-		if(objJsonObject.get("TestType")!=null)
-		{
-			TestAttribute.testName = (String) objJsonObject.get("TestType"); 
-		}
-		
-		if(objJsonObject.get("Category")!=null)
-		{
-			TestAttribute.objtestAttr.put("Category", (String) objJsonObject.get("Category")); 
-		}
-		
-		if(objJsonObject.get("Priority")!=null)
-		{
-			TestAttribute.objtestAttr.put("Priority", (String) objJsonObject.get("Priority")); 
-		}		
-	}
-	
-	JSONObject readAndCreateJSONObject() throws IOException, ParseException
-	{
-		JSONParser objJsonParser = new JSONParser();
+	public static Logger log = Logger.getLogger("InputJsonRead.class");
+	static ArrayList<String> testparameterList = new ArrayList<String>();
+	OrderedJSONObject readAndCreateJSONObject() throws IOException, JSONException{
+		log.info("readAndCreateJSONObject() - Entry");
 		File inputFile = new File(TestAttribute.inputJSONFile);
 		FileReader inputFileReader = new FileReader(inputFile);
-		Object obj = objJsonParser.parse(inputFileReader);
-		JSONObject objJsonObject = (JSONObject)obj;
+		OrderedJSONObject objJsonObject = new OrderedJSONObject(inputFileReader);
+		log.info("readAndCreateJSONObject() - Exit with return "+objJsonObject);
 		return objJsonObject;
 	}
 	
-	
-	ArrayList<String> processAttributeWithSeparator(JSONObject object,String key, String separatorStart, String separatorEnd)
-	{
-		ArrayList<String> returnList = new ArrayList<>();
-		returnList.add(separatorStart);
-		if(key.equals("TestCaseDescription"))
-		{
-			returnList.addAll(processStepsAddHTML(object));
-		}
-		else {
-//			System.out.println("Adding" + (String) object.get(key));
-			returnList.add((String) object.get(key));
-		}
-		returnList.add(separatorEnd);
-		return returnList;
-	}
-	
-	
 	@SuppressWarnings("unchecked")
-	ArrayList<String> processStepsAddHTML(JSONObject object)
+	void jsonread(Object objJsonObject) throws JSONException
 	{
-		JSONObject objectIN = (JSONObject) object.get("TestCaseDescription");
-		JSONObject stepObj;
-		ArrayList<String> returnList = new ArrayList<>();
-		String tempModifiedStr = null;
-		
-		
-		Set<String> inputKey = objectIN.keySet();
-			for (String string : inputKey) {
-				if (objectIN.get(string)!=null) {
-					tempModifiedStr = BoldStart + string + BoldEnd;
-					returnList.add(tempModifiedStr);
-					stepObj=(JSONObject)objectIN.get(string);
-					
-					
-					
-					
-					
-					Set<String> step = stepObj.keySet();
-					tempModifiedStr = OrderedListStart;
-					returnList.add(tempModifiedStr);
-					for (String string2 : step) {
-						tempModifiedStr = ListElementStart + stepObj.get(string2) + ListElementEnd;
-						returnList.add(tempModifiedStr);
-					}
-					tempModifiedStr = OrderedListEnd;
-					returnList.add(tempModifiedStr);
+		log.info("jsonread(objJsonObject="+objJsonObject+") - Entry");
+		for (Iterator<String> iter = ((OrderedJSONObject)(objJsonObject)).getOrder(); iter.hasNext();) {
+			String string = (String) iter.next();
+			Object obj2 = ((OrderedJSONObject)(objJsonObject)).get(string);
+			if(obj2 instanceof OrderedJSONObject){
+				testparameterList.add(Constant.NewLine);
+				testparameterList.add(Constant.BoldStart+string+Constant.BoldEnd);
+				if(!(string.equals("StepsToExecute")||string.equals("SubStep")||string.equals("ExpectedResult")||string.equals("FinalExpectedResult"))){
+				testparameterList.add(string.toUpperCase()+"START");
+				}
+				testparameterList.add(Constant.OrderedListStart);
+				log.info("Calling jsonread in recursion");
+				jsonread(obj2);
+				log.info("Called jsonread in recursion");
+				if(!(string.equals("StepsToExecute")||string.equals("SubStep")||string.equals("ExpectedResult")||string.equals("FinalExpectedResult"))){
+				testparameterList.add(string.toUpperCase()+"END");
 				}
 			}
-		return returnList;
-	}
-
-	ArrayList<String> processJSONtoList() throws IOException, ParseException
-	{
-		
-		JSONObject objJsonObject = readAndCreateJSONObject();
-		setTestAttribute(objJsonObject);
-
-		
-		
-		TestAttribute.mylogger.info("Entered processJSONtoList");
-		ArrayList<String> testparameterList = new ArrayList<String>();
-		
-		if(objJsonObject.get("Path")!=null)
-		{
-			testparameterList.addAll(processAttributeWithSeparator(objJsonObject,"Path", "PATHSTART","PATHEND")); 
-		}
-		
-		if(objJsonObject.get("TestCaseName")!=null)
-		{
-			testparameterList.addAll(processAttributeWithSeparator(objJsonObject, "TestCaseName", "TCNAMESTART","TCNAMEEND")); 
-		}
-		
-		if(objJsonObject.get("TestCaseDescription")!=null)
-		{
-			testparameterList.addAll(processAttributeWithSeparator(objJsonObject, "TestCaseDescription", "TCDDESCRIPTIONSTART","TCDDESCRIPTIONEND"));
-		}
-		
-		return testparameterList;
-		
-	}
-	/*
-	public static void main(String[] args) {
-		InputJsonRead objInputJsonRead = new InputJsonRead();
-		try {
-			
-			for (String string : objInputJsonRead.processJSONtoList()) {
-				
-				System.out.println(string);
+			else {
+				if(string.equals("TestType")){
+					TestAttribute.testName = obj2.toString();
+				}
+				else if (string.equals("Category")||string.equals("Priority")) {
+					TestAttribute.objtestAttr.put(string, obj2.toString());
+				}
+				else {
+					if(string.equals("Path")||string.equals("TestCaseName")){
+						testparameterList.add(string.toUpperCase()+"START");
+						testparameterList.add(obj2.toString());
+						testparameterList.add(string.toUpperCase()+"END");
+					}
+					else {
+						testparameterList.add(Constant.ListElementStart + obj2.toString() + Constant.ListElementEnd);
+					}
+				}
 			}
-			
-			
-		} catch (IOException | ParseException e) {
-			// TODO Auto-generated catch block
+		}
+		log.info("jsonread() - Exit");
+		testparameterList.add(Constant.OrderedListEnd);
+	}
+	
+	ArrayList<String> processJSONToList() throws IOException, JSONException{
+		log.info("processJSONToList() - Entry");
+		InputJsonRead objInputJsonRead = new InputJsonRead();
+		OrderedJSONObject objOrderedJSONObject = null ;
+		objOrderedJSONObject = objInputJsonRead.readAndCreateJSONObject();
+		objInputJsonRead.jsonread(objOrderedJSONObject);
+		log.info("processJSONToList() - Exit with testparameterList of size" + testparameterList.size());
+		return testparameterList;
+	}
+	
+	/*public static void main(String[] args) {
+		InputJsonRead objInputJsonRead = new InputJsonRead();
+		OrderedJSONObject objOrderedJSONObject = null ;
+		try {
+			objOrderedJSONObject = objInputJsonRead.readAndCreateJSONObject();
+			objInputJsonRead.jsonread(objOrderedJSONObject);
+		} catch (IOException | JSONException e) {
 			e.printStackTrace();
 		}
+		for (String string : testparameterList ) {
+			System.out.println(string);
+		}
+		
+	}*/
 	}
 	
-
-	*/
-	
-}

@@ -6,7 +6,6 @@ import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
 import org.apache.wink.json4j.JSONException;
-import org.json.simple.parser.ParseException;
 
 import operations.*;
 import utilities.TestAttribute;
@@ -69,9 +68,6 @@ public class MainStart {
 		try {
 			objInputTestStepsProcess.openAndReadXmlFile();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (JSONException e) {

@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.wink.json4j.JSONException;
-import org.json.simple.parser.ParseException;
 
 
 public class InputTestStepsProcess {
@@ -14,7 +13,7 @@ public class InputTestStepsProcess {
 	FileReader objFileReader = null;
 	
 	InputJsonRead objInputJsonRead = new InputJsonRead();
-	public void openAndReadXmlFile() throws IOException, ParseException, JSONException {    
+	public void openAndReadXmlFile() throws IOException, JSONException {    
 		TestAttribute.mylogger.info("Entered openAndReadXmlFile and delimiter charcter is "+delimitCharacter);
 		String testLine = null;
 		

@@ -12,7 +12,7 @@ public class TestAttribute {
 	public static TestCase objTestCaseLine = new TestCase();  // declared here 
 	public static HashMap<String, String> objtestAttr = new HashMap<String, String>();
 	public static Logger mylogger = Logger.getLogger("MyLog");
-	public static String logPath = "FileFolder/Logs/log";
+	public static String logPath = "F:/Workspace/Eclipse/JavaEE/TestCaseGenerateWebLogs/backlog/log";
 	public final static String inputJSONFile = "FileFolder/TestCase.json";
 
 }

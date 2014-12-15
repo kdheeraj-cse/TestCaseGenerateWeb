@@ -8,6 +8,7 @@ import java.util.logging.SimpleFormatter;
 import org.apache.wink.json4j.JSONException;
 
 import operations.*;
+import utilities.Constant;
 import utilities.TestAttribute;
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
@@ -16,7 +17,7 @@ public class MainStart {
 	public MainStart() {
 		FileHandler fh = null;
 		try {
-			fh = new FileHandler(TestAttribute.logPath);
+			fh = new FileHandler(Constant.LOGPATH);
 		} catch (SecurityException | IOException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -28,8 +29,8 @@ public class MainStart {
 		TestAttribute.mylogger.info("LOG FILE Intialized and start");
 	}
 
-	public boolean isXMLPresent() {
-		File file = new File(TestAttribute.inputJSONFile);
+	public boolean isJsonPresent() {
+		File file = new File(Constant.INJSONPATH);
 		if (file.exists()) {
 			TestAttribute.mylogger.info("Input Test XML file found");
 			return true;
@@ -39,7 +40,7 @@ public class MainStart {
 	}
 
 	public boolean isEXCELPresent() {
-		File file = new File(TestAttribute.testParameterExcelInputPath);
+		File file = new File(Constant.INEXCELPATH);
 		if (file.exists()) {
 			TestAttribute.mylogger.info("Input Excel Data file found");
 			return true;
@@ -53,7 +54,7 @@ public class MainStart {
 		InputTestStepsProcess objInputTestStepsProcess = new InputTestStepsProcess();
 		try {
 			objExcelOperations
-					.excelSheetRead(TestAttribute.testParameterExcelInputPath);
+					.excelSheetRead(Constant.INEXCELPATH);
 		} catch (BiffException e1) {
 			TestAttribute.mylogger.info(e1.getMessage());
 			e1.printStackTrace();
@@ -81,7 +82,7 @@ public class MainStart {
 
 		try {
 			objExcelOperations
-					.xlSheetInitForWrite(TestAttribute.outputExcelPath);
+					.xlSheetInitForWrite(Constant.OUTEXCELPATH);
 		} catch (IOException e) {
 			TestAttribute.mylogger.info(e.getMessage());
 		}

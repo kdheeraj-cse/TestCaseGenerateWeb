@@ -18,7 +18,7 @@ public class InputJsonRead {
 	static ArrayList<String> testparameterList = new ArrayList<String>();
 	OrderedJSONObject readAndCreateJSONObject() throws IOException, JSONException{
 		log.info("readAndCreateJSONObject() - Entry");
-		File inputFile = new File(TestAttribute.inputJSONFile);
+		File inputFile = new File(Constant.INJSONPATH);
 		FileReader inputFileReader = new FileReader(inputFile);
 		OrderedJSONObject objJsonObject = new OrderedJSONObject(inputFileReader);
 		log.info("readAndCreateJSONObject() - Exit with return "+objJsonObject);
@@ -33,12 +33,12 @@ public class InputJsonRead {
 			String string = (String) iter.next();
 			Object obj2 = ((OrderedJSONObject)(objJsonObject)).get(string);
 			if(obj2 instanceof OrderedJSONObject){
-				testparameterList.add(Constant.NewLine);
-				testparameterList.add(Constant.BoldStart+string+Constant.BoldEnd);
+				testparameterList.add(Constant.NEWLINE);
+				testparameterList.add(Constant.BOLDSTART+string+Constant.BOLDEND);
 				if(!(string.equals("StepsToExecute")||string.equals("SubStep")||string.equals("ExpectedResult")||string.equals("FinalExpectedResult"))){
 				testparameterList.add(string.toUpperCase()+"START");
 				}
-				testparameterList.add(Constant.OrderedListStart);
+				testparameterList.add(Constant.ORDLISTSTART);
 				log.info("Calling jsonread in recursion");
 				jsonread(obj2);
 				log.info("Called jsonread in recursion");
@@ -60,13 +60,13 @@ public class InputJsonRead {
 						testparameterList.add(string.toUpperCase()+"END");
 					}
 					else {
-						testparameterList.add(Constant.ListElementStart + obj2.toString() + Constant.ListElementEnd);
+						testparameterList.add(Constant.LISTSTART + obj2.toString() + Constant.LISTEND);
 					}
 				}
 			}
 		}
 		log.info("jsonread() - Exit");
-		testparameterList.add(Constant.OrderedListEnd);
+		testparameterList.add(Constant.ORDLISTEND);
 	}
 	
 	ArrayList<String> processJSONToList() throws IOException, JSONException{

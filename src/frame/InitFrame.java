@@ -160,10 +160,10 @@ public class InitFrame extends Frame implements WindowListener, ActionListener
 
 		}
 		if (e.getActionCommand().equals("Check file")) {
-			boolean isXMLPresent = objMainStart.isXMLPresent();
+			boolean isJsonPresent = objMainStart.isJsonPresent();
 			boolean isExcelPresent = objMainStart.isEXCELPresent();
 			
-			if(isXMLPresent&&isExcelPresent)
+			if(isJsonPresent&&isExcelPresent)
 			{
 				//set messgae both present
 				isExcelFilePresent.setText("EXCEL SHEET IS PRESENT");
@@ -171,12 +171,12 @@ public class InitFrame extends Frame implements WindowListener, ActionListener
 				GenerateTestButton.enable();
 				
 			}
-			else if (isXMLPresent&&!isExcelPresent) {
+			else if (isJsonPresent&&!isExcelPresent) {
 				//set message
 				isExcelFilePresent.setText("EXCEL SHEET IS NOT PRESENT");
 				isXMLFilePresent.setText("XML SHEET IS PRESENT");
 			}
-			else if (!isXMLPresent&&isExcelPresent) {
+			else if (!isJsonPresent&&isExcelPresent) {
 				//setmessage
 				isExcelFilePresent.setText("EXCEL SHEET IS PRESENT");
 				isXMLFilePresent.setText("XML SHEET IS NOT PRESENT");

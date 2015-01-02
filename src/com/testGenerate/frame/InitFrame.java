@@ -1,9 +1,9 @@
-package frame;
+package com.testGenerate.frame;
 
 import java.awt.*;
 import java.awt.event.*;
 
-import classes.MainStart;
+import com.testGenerate.classes.MainStart;
 
 public class InitFrame extends Frame implements WindowListener, ActionListener
 {

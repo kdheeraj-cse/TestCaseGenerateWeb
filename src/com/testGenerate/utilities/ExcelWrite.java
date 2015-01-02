@@ -1,4 +1,4 @@
-package utilities;
+package com.testGenerate.utilities;
 
 import java.io.File;
 import java.io.IOException;

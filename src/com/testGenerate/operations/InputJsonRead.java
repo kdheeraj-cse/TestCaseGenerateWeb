@@ -1,4 +1,4 @@
-package operations;
+package com.testGenerate.operations;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.OrderedJSONObject;
 
-import utilities.Constant;
-import utilities.TestAttribute;
+import com.testGenerate.utilities.Constant;
+import com.testGenerate.utilities.TestAttribute;
 
 public class InputJsonRead {
 	

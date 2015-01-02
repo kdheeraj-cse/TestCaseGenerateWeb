@@ -4,12 +4,14 @@
  * 
  * */
 
-package utilities;
+package com.testGenerate.utilities;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import utilities.ExcelColumn;
+
+import com.testGenerate.utilities.ExcelColumn;
+
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;

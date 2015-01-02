@@ -1,11 +1,11 @@
-package operations;
-import utilities.*;
-
+package com.testGenerate.operations;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.wink.json4j.JSONException;
+
+import com.testGenerate.utilities.*;
 
 
 public class InputTestStepsProcess {

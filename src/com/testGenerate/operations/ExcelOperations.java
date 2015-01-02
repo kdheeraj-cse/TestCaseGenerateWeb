@@ -1,14 +1,15 @@
-package operations;
+package com.testGenerate.operations;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.testGenerate.utilities.ExcelColumn;
+import com.testGenerate.utilities.ExcelRead;
+import com.testGenerate.utilities.ExcelWrite;
+import com.testGenerate.utilities.TestAttribute;
+
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
-import utilities.ExcelColumn;
-import utilities.ExcelRead;
-import utilities.ExcelWrite;
-import utilities.TestAttribute;
 
 public class ExcelOperations {
 	ExcelRead objExcelRead = new ExcelRead();

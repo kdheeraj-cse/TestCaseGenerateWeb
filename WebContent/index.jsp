@@ -10,26 +10,43 @@
       <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <script src="https://code.jquery.com/jquery.js"></script>
       <script src="Bootstrap/js/bootstrap.min.js"></script>
+      <script src="Bootstrap/js/myJsFunction.js"></script>
 </head>
 <body>
 <div class="container">
-<fieldset>
+
+<div>
+<ul class="nav nav-pills nav-stacked">
+   <li class="active"><a href="#">Home</a></li>
+   <li><a onclick="showCreateTest();">Create Test</a></li>
+   <li><a onclick="showHistory();">See History</a></li>
+   <li><a href="#">Edit Profile</a></li>
+   <li><a href="#">Saved Files</a></li>
+   <li><a href="#">--</a></li>
+</ul>
+</div>
 
 
 
+
+
+
+
+<div id="createTest" style="display:none">
 <form class="form-horizontal" role="form">
    <div class="form-group">
-      <label for="firstname" class="col-sm-2 control-label">First Name</label>
+      <label for="uploadJSON" class="col-sm-2 control-label">JSON</label>
       <div class="col-sm-10">
-         <input type="text" class="form-control" id="firstname" 
-            placeholder="Enter First Name">
+         <input type="file" id="jsonFile" class="file" onchange="uploadStart(this.value);"
+            >
+          <img alt="" id="uploadProg" src="" height="25" width="25">
       </div>
    </div>
    <div class="form-group">
-      <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+      <label for="uploadExcel" class="col-sm-2 control-label">Excel</label>
       <div class="col-sm-10">
-         <input type="text" class="form-control" id="lastname" 
-            placeholder="Enter Last Name">
+         <input type="file" id="excelFile" class="file"
+            >
       </div>
    </div>
    <div class="form-group">
@@ -47,10 +64,9 @@
       </div>
    </div>
 </form>
+</div>
 
 
-
-</fieldset>
 </div>
 
 </body>

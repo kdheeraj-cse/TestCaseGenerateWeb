@@ -1,4 +1,4 @@
-package utilities;
+package com.testGenerate.utilities;
 
 public class Constant {
 	
@@ -16,6 +16,12 @@ public class Constant {
 	public static final String LOGPATH ="F:/Workspace/Eclipse/JavaEE/TestCaseGenerateWebLogs/backlog/log";
 	
 	//public static Map<String, String> jsonKeyMap;
+	
+	//userLoginMapKeys
+	
+	public static final String ISLOGINVALID = "isLoginValid"; 
+	public static final String ISTEMPPASS = "isTempPassword";
+	
 	
 	/*
 	public static String PATHLIMITER = "";

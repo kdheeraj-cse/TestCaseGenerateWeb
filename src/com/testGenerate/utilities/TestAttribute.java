@@ -1,4 +1,4 @@
-package utilities;
+package com.testGenerate.utilities;
 
 import java.util.HashMap;
 import java.util.logging.Logger;

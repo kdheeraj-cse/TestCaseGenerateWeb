@@ -1,4 +1,4 @@
-package classes;
+package com.testGenerate.classes;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,9 +7,10 @@ import java.util.logging.SimpleFormatter;
 
 import org.apache.wink.json4j.JSONException;
 
-import operations.*;
-import utilities.Constant;
-import utilities.TestAttribute;
+import com.testGenerate.operations.*;
+import com.testGenerate.utilities.Constant;
+import com.testGenerate.utilities.TestAttribute;
+
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 

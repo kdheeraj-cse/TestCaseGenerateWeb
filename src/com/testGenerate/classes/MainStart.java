@@ -8,8 +8,8 @@ import java.util.logging.SimpleFormatter;
 import org.apache.wink.json4j.JSONException;
 
 import com.testGenerate.operations.*;
-import com.testGenerate.utilities.Constant;
-import com.testGenerate.utilities.TestAttribute;
+import com.testGenerate.utilities.Common.Constant;
+import com.testGenerate.utilities.Common.TestAttribute;
 
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;

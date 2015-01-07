@@ -16,5 +16,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="JXLAPI/wink-json4j-1.1.2-incubating.jar"/>
 	<classpathentry kind="lib" path="JXLAPI/mongo-java-driver-2.13.0-rc1.jar"/>
+	<classpathentry kind="lib" path="JXLAPI/gson-2.2.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

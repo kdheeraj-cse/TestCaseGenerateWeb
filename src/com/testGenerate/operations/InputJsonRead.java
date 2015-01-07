@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.OrderedJSONObject;
 
-import com.testGenerate.utilities.Constant;
-import com.testGenerate.utilities.TestAttribute;
+import com.testGenerate.utilities.Common.Constant;
+import com.testGenerate.utilities.Common.TestAttribute;
 
 public class InputJsonRead {
 	

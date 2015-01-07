@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.testGenerate.operations.UserOperations;
-import com.testGenerate.utilities.Constant;
+import com.testGenerate.utilities.Common.Constant;
 
 @WebServlet(description = "Servlet for User Login functionality", urlPatterns = { "/userLogin.do" })
 public class Login extends HttpServlet {
@@ -34,7 +34,7 @@ public class Login extends HttpServlet {
 		HashMap<String,String>loginStatus = objUserOperations.credentialsStatus(inputUserID, inputUserPass); 
 		
 		try {
-			 String isCredentailsValid = loginStatus.get(Constant.ISLOGINVALID);
+			 String isCredentailsValid = loginStatus.get(Constant._ISLOGINVALID);
 			 if (isCredentailsValid.equals("true")) {
 				 
 				 //setSession
@@ -47,8 +47,8 @@ public class Login extends HttpServlet {
 				 Cookie userName = new Cookie("userID", inputUserID);
 				 userName.setMaxAge(30*60);
 				 response.addCookie(userName);
-				 String isTemporaryPassword = loginStatus.get(Constant.ISTEMPPASS);
-				 String lastLoginTime = loginStatus.get("");
+				 String isTemporaryPassword = loginStatus.get(Constant._ISTEMPPASS);
+				 String lastLoginTime = loginStatus.get(Constant._LASTLOGIN);
 				 request.setAttribute("lastLoginTime", lastLoginTime);
 
 				 RequestDispatcher objRequestDispatcher = null;

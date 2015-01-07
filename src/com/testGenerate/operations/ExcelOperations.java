@@ -3,10 +3,10 @@ package com.testGenerate.operations;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.testGenerate.utilities.ExcelColumn;
-import com.testGenerate.utilities.ExcelRead;
-import com.testGenerate.utilities.ExcelWrite;
-import com.testGenerate.utilities.TestAttribute;
+import com.testGenerate.utilities.Common.TestAttribute;
+import com.testGenerate.utilities.excel.ExcelColumn;
+import com.testGenerate.utilities.excel.ExcelRead;
+import com.testGenerate.utilities.excel.ExcelWrite;
 
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;

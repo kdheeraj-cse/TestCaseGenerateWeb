@@ -17,6 +17,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.WriteResult;
+import com.testGenerate.utilities.Common.Constant;
 import com.testGenerate.utilities.User.User;
 
 public class DBOperations {
@@ -32,6 +34,8 @@ public class DBOperations {
 			objDb = objMongoClient.getDB(database);
 		}
 	}
+	
+	
 	
 	DBCollection createCollection(String collectionName)
 	{
@@ -81,6 +85,11 @@ public class DBOperations {
 		return objDbObject;
 	}
 
+	public WriteResult updateObject(String collectionName, DBObject query, DBObject newObj) {
+		WriteResult objResult = objDb.getCollection(collectionName).update(query,newObj);
+		return objResult;
+	}
+	
 	void closeConnection()
 	{
 		objMongoClient.close();

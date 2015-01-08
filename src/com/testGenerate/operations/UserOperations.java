@@ -40,8 +40,8 @@ public class UserOperations {
 	
 	public void userRegister(HashMap<Object, Object> detailsMap) throws UnknownHostException
 	{
-		detailsMap.replace("pass", "", generateRandomPass()); //Set the random pass and send mail to user 
-		detailsMap.replace("tempPass", "true");
+		detailsMap.put("pass", generateRandomPass()); //Set the random pass and send mail to user 
+		detailsMap.put("tempPass", "true");
 		//TODO: Mail send code
 		
 		DBOperations objDbOperations = new DBOperations(Constant._SERVER, Constant._PORT,"TestCaseGenerate");

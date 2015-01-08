@@ -36,6 +36,8 @@
 	</div>
 </form>
 </div>
+<a href="register.jsp">Sign UP</a>
+
 </div>
 </body>
 </html>

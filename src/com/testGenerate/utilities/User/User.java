@@ -1,16 +1,11 @@
 package com.testGenerate.utilities.User;
 
 import java.util.HashMap;
-import java.util.Iterator;
-
-import org.apache.wink.json4j.JSONException;
-import org.apache.wink.json4j.OrderedJSONObject;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class User {
-	private String userName;
+	private String userId;
 	private String name;
 	private Integer age;
 	private String pass;
@@ -20,8 +15,8 @@ public class User {
 	private String tempPass;
 	private String lastLogin;
 	
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	
 	public void setName(String name) {

@@ -21,15 +21,27 @@
 <form action="register.do" class="" role="form" method="post">
 	<div class="form-group">
 		<label for="username" class="col-sm-2 control-label">UserID</label>
-		<div class="col-sm-10"><input type="text" class="form-control" id="userid" name="userid"></div>
+		<div class="col-sm-10"><input type="text" class="form-control" id="userId" name="userId"></div>
 	</div>
 	<div class="form-group">
 		<label for="name" class="col-sm-2 control-label">NAME</label>
 		<div class="col-sm-10"><input type="text" class="form-control" id="name" name="name"></div>
 	</div>
 	<div class="form-group">
+		<label for="age" class="col-sm-2 control-label">Age</label>
+		<div class="col-sm-10"><input type="text" class="form-control" id="age" name="age"></div>
+	</div>
+	<div class="form-group">
+		<label for="email" class="col-sm-2 control-label">Email</label>
+		<div class="col-sm-10"><input type="text" class="form-control" id="email" name="email"></div>
+	</div>
+	<div class="form-group">
+		<label for="address" class="col-sm-2 control-label">Address</label>
+		<div class="col-sm-10"><input type="text" class="form-control" id="address" name="address"></div>
+	</div>
+	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-         <button type="submit" class="btn btn-default">Sign in</button>
+         <button type="submit" class="btn btn-default">Register</button>
      	</div>
 	</div>
 </form>

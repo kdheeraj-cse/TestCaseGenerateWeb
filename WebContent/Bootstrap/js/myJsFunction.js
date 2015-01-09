@@ -42,3 +42,7 @@ function showCreateTest() {
 function showHistory() {
 	document.getElementById("createTest").style.display ='none';
 }
+
+function logout(){
+	
+	}

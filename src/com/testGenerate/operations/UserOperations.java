@@ -69,14 +69,12 @@ public class UserOperations {
 		else {
 			System.out.println("folder create status "+userFolder);			
 		}
-	
-		//objDbOperations.closeConnection();
+		objDbOperations.closeConnection();
 	}
 	
 	public void updatePassword(HttpServletRequest request) throws UnknownHostException {
 		
 		HttpSession session = request.getSession();
-		
 		HashMap<String, String> passDetails = new HashMap<String, String>();
 		passDetails.put("pass", session.getAttribute("oldPass").toString());
 		passDetails.put("userId", session.getAttribute("user").toString());
@@ -85,22 +83,15 @@ public class UserOperations {
 		DBObject dataObject = objDbOperations.getDataObject(Constant._USERCOL, queryObj);
 		
 		if(dataObject!=null){
-			
 			passDetails.clear();
 			passDetails.put("pass", session.getAttribute("newPass").toString());
 			passDetails.put("tempPass", "false");
 			BasicDBObject upateObj = objDbOperations.getQueryObject(passDetails);
-
 			objDbOperations.updateObject(Constant._USERCOL, queryObj, upateObj);
 		}
 		else {
 			System.out.println("password entered wrong");
 		}
-		
-		
-		
-		
-		
+		objDbOperations.closeConnection();
 	}
-	
 }

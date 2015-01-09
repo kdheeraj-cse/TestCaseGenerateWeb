@@ -61,7 +61,6 @@ public class DBOperations {
 	
 	DBObject getDataObject(String collectionName,BasicDBObject obj)
 	{
-		//System.out.println(objDb.getCollection(collectionName).findOne(obj));
 		DBObject objDbObject = objDb.getCollection(collectionName).findOne(obj);
 		System.out.println(objDbObject);
 		return objDbObject;
@@ -86,13 +85,17 @@ public class DBOperations {
 	}
 
 	public WriteResult updateObject(String collectionName, DBObject query, DBObject newObj) {
-		WriteResult objResult = objDb.getCollection(collectionName).update(query,newObj);
+		
+		BasicDBObject object = new BasicDBObject("$set", newObj);
+		WriteResult objResult = objDb.getCollection(collectionName).update(query,object);
 		return objResult;
 	}
 	
 	void closeConnection()
 	{
 		objMongoClient.close();
+		objMongoClient = null;
+		objDb = null;
 	}
 	
 	/*

@@ -2,6 +2,7 @@ package com.testGenerate.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 import com.testGenerate.operations.UserOperations;
 
@@ -33,6 +33,9 @@ public class UpdatePassword extends HttpServlet {
 		
 		UserOperations objOperations = new UserOperations();
 		objOperations.updatePassword(request);
+		RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
+		dispatch.forward(request, response);
+		
 	}
 
 }

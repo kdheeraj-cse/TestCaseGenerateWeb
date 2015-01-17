@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Sign up - Progressus Bootstrap template</title>
+	<title>Right Sidebar template - Progressus Bootstrap template</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -44,11 +44,11 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="sidebar-left.jsp">Left Sidebar</a></li>
-							<li><a href="sidebar-right.jsp">Right Sidebar</a></li>
+							<li class="active"><a href="sidebar-right.jsp">Right Sidebar</a></li>
 						</ul>
 					</li>
 					<li><a href="contact.jsp">Contact</a></li>
-					<li class="active"><a class="btn" href="signin.jsp">SIGN IN / SIGN UP</a></li>
+					<li><a class="btn" href="signin.jsp">SIGN IN / SIGN UP</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -62,58 +62,59 @@
 
 		<ol class="breadcrumb">
 			<li><a href="index.jsp">Home</a></li>
-			<li class="active">Registration</li>
+			<li class="active">Right Sidebar</li>
 		</ol>
 
 		<div class="row">
 			
 			<!-- Article main content -->
-			<article class="col-xs-12 maincontent">
+			<article class="col-md-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Registration</h1>
+					<h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
 				</header>
-				
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Register a new account</h3>
-							<p class="text-center text-muted">Already having an account, please <a href="signin.jsp">Login</a> to continue using services. </p>
-							<hr>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!</p>
+				<p>Consectetur cupiditate labore repudiandae beatae nisi fugiat facilis natus illum vitae doloremque. In, perspiciatis, natus, impedit voluptas itaque odio repudiandae placeat nisi totam repellendus earum dolores mollitia tempore quasi beatae alias cum dicta maxime laborum corporis harum porro magnam laboriosam.</p>
+				<p>Aut, eaque, minus atque alias odio mollitia cum nisi ipsa nulla natus quae minima similique ipsam aspernatur molestias animi in deleniti nam. Tempora, labore, modi eum perspiciatis doloremque sequi nam illo corporis iusto maiores nisi recusandae repellat animi reiciendis accusamus.</p>
 
-							<form method="post" action="register.do">
-								<div class="top-margin">
-									<label>First Name</label>
-									<input type="text" class="form-control" id="fname" name="fname">
-								</div>
-								<div class="top-margin">
-									<label>Last Name</label>
-									<input type="text" class="form-control" id="lname" name="lname">
-								</div>
-								<div class="top-margin">
-									<label>Email Address <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="email" name="email">
-								</div>
-								<hr>
+				<h2>A, quibusdam, nobis, eveniet consequatur</h2>
+				<p>A, quibusdam, nobis, eveniet consequatur alias doloremque officia blanditiis fuga et numquam labore reiciendis voluptas quis repellat quos sunt non dolore consectetur at sit nam tenetur dolorem? Harum, quas, sit perspiciatis esse odit temporibus aperiam nulla aspernatur sequi fugiat tempore?</p>
+				<p>Ad velit consequuntur quo qui odit quam sapiente repudiandae et ea pariatur? Ex sapiente beatae nobis consectetur ea. Deleniti, beatae, magnam, dolorum, fuga nostrum quas laboriosam sapiente temporibus enim voluptates ullam impedit atque quae provident quos mollitia aperiam perferendis amet.</p>
 
-								<div class="row">
-									<div class="col-lg-8">
-										<label class="checkbox">
-											<input type="checkbox"> 
-											I've read the <a href="page_terms.jsp">Terms and Conditions</a>
-										</label>                        
-									</div>
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+				<blockquote>Numquam, ut iure quia facere totam quas odit illo incidunt. Voluptatem, nostrum, ex, quasi incidunt similique cum maxime expedita unde labore inventore excepturi veniam corporis sequi facere ullam voluptates amet illum quam fuga voluptatibus ipsum atque sunt eos. Ut, necessitatibus.</blockquote>
+				<p>Odit, laudantium, dolores, natus distinctio labore voluptates in inventore quasi qui nobis quis adipisci fugit id! Aliquam alias ea modi. Porro, odio, sed veniam hic numquam qui ad molestiae sint placeat expedita? Perferendis, enim qui numquam sequi obcaecati molestiae fugiat!</p>
+				<p>Aperiam, odit, quasi, voluptate fugiat quisquam velit magni provident corporis animi facilis illo eveniet eum obcaecati adipisci blanditiis quas labore doloribus eos veniam repudiandae suscipit tempora ad harum odio eius distinctio hic deleniti. Sunt fuga ad perspiciatis repellat deleniti omnis!</p>
 
-				</div>
-				
+				<h3>Numquam, ut iure quia facere totam quas odit illo incidunt</h3>
+				<p>Est, maiores, fuga sed nemo qui veritatis ducimus placeat odit quisquam dolorum. Rem, sunt, praesentium veniam maiores quia molestias eos fugit eaque ducimus veritatis provident assumenda. Quia, fuga, voluptates voluptatibus quis enim nam asperiores aliquam dignissimos ullam recusandae debitis iste.</p>
+				<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis? Minus, non, tempore, illo, mollitia exercitationem tempora quas harum odio dolores delectus quidem laudantium adipisci ducimus ullam placeat eaque minima quae iure itaque corporis magni nesciunt eius sed dolor doloremque id quasi nisi.</p>
 			</article>
 			<!-- /Article -->
+			
+			<!-- Sidebar -->
+			<aside class="col-md-4 sidebar sidebar-right">
+
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Lorem ipsum dolor sit</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ratione delectus reiciendis nulla nisi pariatur molestias animi eos repellat? Vel.</p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Lorem ipsum dolor sit</h4>
+						<p><img src="assets/images/1.jpg" alt=""></p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Lorem ipsum dolor sit</h4>
+						<p><img src="assets/images/2.jpg" alt=""></p>
+						<p>Qui, debitis, ad, neque reprehenderit laborum soluta dolor voluptate eligendi enim consequuntur eveniet recusandae rerum? Atque eos corporis provident tenetur.</p>
+					</div>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
 
 		</div>
 	</div>	<!-- /container -->

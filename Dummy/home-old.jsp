@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,7 +20,10 @@
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
-
+	
+	<!-- Custom styles for SideBar -->
+	<link href="assets/css/simple-sidebar.css" rel="stylesheet">
+	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -54,36 +58,49 @@
 		</div>
 	</div> 
 	<!-- /.navbar -->
+ 
+	<!-- Header -->
 
-	<!-- Header-->
-	<center><fieldset>
-	<header id="homepagehead">
-	
-
-
-
-
-<ul id="myTab" class="nav nav-tabs">
-   <li class="active">
-      <a href="#home" data-toggle="tab">Details</a>
-   </li>
-   <li><a href="#testCreate" data-toggle="tab">Write Test</a></li>
-   <li><a href="#ios" data-toggle="tab">Edit Profile</a></li>
-   
-</ul>
-
-<div id="myTabContent" class="tab-content">
-   <div class="tab-pane fade in active" id="home">
-      <p>Tutorials Point is a place for beginners in all technical areas. 
-         This website covers most of the latest technoligies and explains 
-         each of the technology with simple examples. You also have a 
-         <b>tryit</b> editor, wherein you can edit your code and 
-         try out different possibilities of the examples.</p>
-   </div>
-   <div class="tab-pane fade" id="testCreate">
-      		
-             <form class="form-horizontal" role="form" method="post" action="">
-             <br><br><br>
+<header id="head">
+		<div class="container">
+			<div class="row">
+	  <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        
+        
+        <!-- sideforms -->
+        <div id="sideforms">
+        <form class="form-horizontal" role="form">
    <div class="form-group">
       <label for="uploadJSON" class="col-sm-2 control-label">JSON</label>
       <div class="col-sm-10">
@@ -114,36 +131,113 @@
       </div>
    </div>
 </form>
-      
-      
-      
-   </div>
-   <div class="tab-pane fade" id="jmeter">
-      <p>jMeter is an Open Source testing software. It is 100% pure 
-      Java application for load and performance testing.</p>
-   </div>
-   <div class="tab-pane fade" id="ejb">
-      <p>Enterprise Java Beans (EJB) is a development architecture 
-         for building highly scalable and robust enterprise level    
-         applications to be deployed on J2EE compliant 
-         Application Server such as JBOSS, Web Logic etc.
-      </p>
-   </div>
-</div>
-
-
+        
+        </div>
+        
+        <!-- /sideforms wrapper-->
+        
+        
+        
+        
+       
+			</div>
+		</div>
+	</header>
 	
-	
-	
-	
-	
-	
-	
-		
-	</header></fieldset>
-	</center>
 	<!-- /Header -->
+ 
 
+
+
+	<!-- Intro -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thin">The best place to tell people why they are here</h2>
+		<p class="text-muted">
+			The difference between involvement and commitment is like an eggs-and-ham breakfast:<br> 
+			the chicken was involved; the pig was committed.
+		</p>
+	</div>
+	<!-- /Intro-->
+		
+	<!-- Highlights - jumbotron -->
+	<div class="jumbotron top-space">
+		<div class="container">
+			
+			<h3 class="text-center thin">Add Here</h3>
+			
+			
+		
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="text-center top-space">Frequently Asked Questions</h2>
+		<br>
+<!-- 
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Which code editor would you recommend?</h3>
+				<p>I'd highly recommend you <a href="http://www.sublimetext.com/">Sublime Text</a> - a free to try text editor which I'm using daily. Awesome tool!</p>
+			</div>
+			<div class="col-sm-6">
+				<h3>Nice header. Where do I find more images like that one?</h3>
+				<p>
+					Well, there are thousands of stock art galleries, but personally, 
+					I prefer to use photos from these sites: <a href="http://unsplash.com">Unsplash.com</a> 
+					and <a href="http://www.flickr.com/creativecommons/by-2.0/tags/">Flickr - Creative Commons</a></p>
+			</div>
+		</div> <!-- /row -->
+	<!-- 
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Can I use it to build a site for my client?</h3>
+				<p>
+					Yes, you can. You may use this template for any purpose, just don't forget about the <a href="http://creativecommons.org/licenses/by/3.0/">license</a>, 
+					which says: "You must give appropriate credit", i.e. you must provide the name of the creator and a link to the original template in your work. 
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<h3>Can you customize this template for me?</h3>
+				<p>Yes, I can. Please drop me a line to sergey-at-pozhilov.com and describe your needs in details. Please note, my services are not cheap.</p>
+			</div>
+		</div> <!-- /row -->
+
+<!-- 
+		<div class="jumbotron top-space">
+			<h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
+     		<p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
+  		</div>
+ --> 
+</div>	<!-- /container -->
 	
 	<!-- Social links. @TODO: replace by link/instructions in template -->
 	<section id="social">
@@ -246,3 +340,4 @@
 	<script src="assets/js/template.js"></script>
 </body>
 </html>
+

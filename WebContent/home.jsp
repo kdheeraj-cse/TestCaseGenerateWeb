@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Progressus - Free business bootstrap template by GetTemplate</title>
+	<title>Left Sidebar template - Progressus Bootstrap template</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -19,6 +19,7 @@
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/custom-css/simple-sidebar.css">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -27,7 +28,7 @@
 	<![endif]-->
 </head>
 
-<body class="home">
+<body>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
@@ -38,13 +39,13 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li><a href="about.jsp">About</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.jsp">Left Sidebar</a></li>
-							<li class="active"><a href="sidebar-right.jsp">Right Sidebar</a></li>
+							<li class="active"><a href="sidebar-left.jsp">Left Sidebar</a></li>
+							<li><a href="sidebar-right.jsp">Right Sidebar</a></li>
 						</ul>
 					</li>
 					<li><a href="contact.jsp">Contact</a></li>
@@ -55,115 +56,72 @@
 	</div> 
 	<!-- /.navbar -->
 
-	<!-- Header-->
-	<center><fieldset>
-	<header id="homepagehead">
-	
+	<header id="head" class="secondary"></header>
 
-
-
-
-<ul id="myTab" class="nav nav-tabs">
-   <li class="active">
-      <a href="#home" data-toggle="tab">Details</a>
-   </li>
-   <li><a href="#testCreate" data-toggle="tab">Write Test</a></li>
-   <li><a href="#ios" data-toggle="tab">Edit Profile</a></li>
-   
-</ul>
-
-<div id="myTabContent" class="tab-content">
-   <div class="tab-pane fade in active" id="home">
-      <p>Tutorials Point is a place for beginners in all technical areas. 
-         This website covers most of the latest technoligies and explains 
-         each of the technology with simple examples. You also have a 
-         <b>tryit</b> editor, wherein you can edit your code and 
-         try out different possibilities of the examples.</p>
-   </div>
-   <div class="tab-pane fade" id="testCreate">
-      		
-             <form class="form-horizontal" role="form" method="post" action="">
-             <br><br><br>
-   <div class="form-group">
-      <label for="uploadJSON" class="col-sm-2 control-label">JSON</label>
-      <div class="col-sm-10">
-         <input type="file" id="jsonFile" class="file" onchange="uploadStart(this.value);"
-            >
-          <img alt="" id="uploadProg" src="" height="25" width="25">
-      </div>
-   </div>
-   <div class="form-group">
-      <label for="uploadExcel" class="col-sm-2 control-label">Excel</label>
-      <div class="col-sm-10">
-         <input type="file" id="excelFile" class="file"
-            >
-      </div>
-   </div>
-   <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-         <div class="checkbox">
-            <label>
-               <input type="checkbox"> Remember me
-            </label>
-         </div>
-      </div>
-   </div>
-   <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-         <button type="submit" class="btn btn-default">Sign in</button>
-      </div>
-   </div>
-</form>
-      
-      
-      
-   </div>
-   <div class="tab-pane fade" id="jmeter">
-      <p>jMeter is an Open Source testing software. It is 100% pure 
-      Java application for load and performance testing.</p>
-   </div>
-   <div class="tab-pane fade" id="ejb">
-      <p>Enterprise Java Beans (EJB) is a development architecture 
-         for building highly scalable and robust enterprise level    
-         applications to be deployed on J2EE compliant 
-         Application Server such as JBOSS, Web Logic etc.
-      </p>
-   </div>
-</div>
-
-
-	
-	
-	
-	
-	
-	
-	
+	<!-- container -->
+	<div class="container">
 		
-	</header></fieldset>
-	</center>
-	<!-- /Header -->
+		<ol class="breadcrumb">
+			<li><a href="index.jsp">Home</a></li>
+			<li class="active">Left Sidebar</li>
+		</ol>
 
-	
-	<!-- Social links. @TODO: replace by link/instructions in template -->
-	<section id="social">
-		<div class="container">
-			<div class="wrapper clearfix">
-				<!-- AddThis Button BEGIN -->
-				<div class="addthis_toolbox addthis_default_style">
-				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-				<a class="addthis_button_tweet"></a>
-				<a class="addthis_button_linkedin_counter"></a>
-				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-				</div>
-				<!-- AddThis Button END -->
-			</div>
+		<div class="row">
+			
+			<!-- Sidebar -->
+			<aside class="col-md-4 sidebar sidebar-left">
+			
+			
+			
+			
+       <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+			
+			</aside>
+			<!-- /Sidebar -->
+
+			<!-- Article main content -->
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+				</header>
+				Forms for varios operation
+			</article>
+			<!-- /Article -->
+
 		</div>
-	</section>
-	<!-- /social links -->
+	</div>	<!-- /container -->
+	
 
-
-	<footer id="footer" class="top-space">
+<footer id="footer" class="top-space">
 
 		<div class="footer1">
 			<div class="container">
@@ -172,10 +130,10 @@
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Contact</h3>
 						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
+							<p>+91-9538051387<br>
+								<a href="mailto:kdheeraj.cse@gmail.com">kdheeraj.cse@gmail.com</a><br>
 								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
+								Green garden layout, Kundallhalli Bangalore,  560025
 							</p>	
 						</div>
 					</div>
@@ -184,10 +142,10 @@
 						<h3 class="widget-title">Follow me</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons">
-								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href="https://twitter.com/dj8april"><i class="fa fa-twitter fa-2"></i></a>
 								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
 								<a href=""><i class="fa fa-github fa-2"></i></a>
-								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+								<a href="https://www.facebook.com/dj8april"><i class="fa fa-facebook fa-2"></i></a>
 							</p>	
 						</div>
 					</div>
@@ -223,7 +181,7 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+								Copyright &copy; 2015, Dheeraj Arya.
 							</p>
 						</div>
 					</div>
@@ -233,6 +191,7 @@
 		</div>
 
 	</footer>	
+
 		
 
 

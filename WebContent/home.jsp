@@ -78,44 +78,296 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Select Options
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="#" id="Dashboard" onclick="showContextForm(this.id)">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#" id="Create_Test" onclick="showContextForm(this.id)">Create Test</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="#" id="Saved_Files" onclick="showContextForm(this.id)">Saved Files</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#" id="History" onclick="showContextForm(this.id)">History</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#" id="Edit_Profile"  onclick="showContextForm(this.id)">Edit Profile</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="#" id="Search" onclick="showContextForm(this.id)">Search</a>
                 </li>
             </ul>
         </div>
 			
 			</aside>
 			<!-- /Sidebar -->
-
-			<!-- Article main content -->
+			
+			
+			<!-- Article main content for Dashboard -->
+			<div id="dashboarddiv" style="display: block">
 			<article class="col-md-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+					<h4 class="page-title">DASHBOARD</h4>
 				</header>
-				Forms for varios operation
+				
+				
 			</article>
+			</div>
 			<!-- /Article -->
+			
+			
+			
+			
+			<!-- Article main content for create test -->
+			<div id="createtestdiv" style="display: none">
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h4 class="page-title">CREATE TEST</h4>
+				</header>
+<!-- Form Name : create Test -->				
+<form class="form-horizontal">
+<!-- Multiple Radios -->
+<div class="control-group">
+  <label class="control-label" for="jsonInput">Test steps JSON file</label>
+  <div class="controls">
+    <label class="radio" for="jsonInput-0">
+      <input name="jsonInput" id="jsonInput-0" value="Select" checked="checked" type="radio" onclick="showJsonSelect()">
+      Select
+    </label>
+    <label class="radio" for="jsonInput-1">
+      <input name="jsonInput" id="jsonInput-1" value="Upload" type="radio" onclick="showJsonUploadForm()">
+      Upload
+    </label>
+  </div>
+</div>
+
+ 
+
+
+<!-- Multiple Radios -->
+<div class="control-group">
+  <label class="control-label" for="excelInput">Combination Excel file</label>
+  <div class="controls">
+    <label class="radio" for="excelInput-0">
+      <input name="excelInput" id="excelInput-0" value="Select" checked="checked" type="radio" onclick="showExcelSelect()">
+      Select
+    </label>
+    <label class="radio" for="excelInput-1">
+      <input name="excelInput" id="excelInput-1" value="Upload" type="radio" onclick="showExcelUploadForm()">
+      Upload
+    </label>
+  </div>
+</div>
+
+
+
+<!-- Multiple Radios -->
+<div class="control-group">
+  <label class="control-label" for="outputFormat">Output format</label>
+  <div class="controls">
+    <label class="radio" for="outputFormat-0">
+      <input name="outputFormat" id="outputFormat-0" value="xstudio" checked="checked" type="radio">
+      xStudio upload compitable
+    </label>
+    <label class="radio" for="outputFormat-1">
+      <input name="outputFormat" id="outputFormat-1" value="msword" type="radio">
+      Microsoft word docx
+    </label>
+  </div>
+</div>
+
+
+<!-- Button -->
+<br><br>
+<div class="control-group">
+  <label class="control-label" for="singlebutton"></label>
+  <div class="controls">
+    <button id="singlebutton" name="singlebutton" class="btn btn-success">Create</button>
+  </div>
+</div>
+</form>
+
+<!-- Modal for test create -->
+
+<!-- Modal for JSON UPLOAD -->
+<div id="jsonUpload" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload JSON file</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="control-group" id="jsonupload">
+  					<label class="control-label" for="filebutton"></label>
+  					<div class="controls">
+    				<input id="filebutton" name="filebutton" class="file" type="file">
+  					</div>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="startUpload()">UPLOAD</button>
+                <div id="upload" style="display:none;">Uploading..</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for EXCEL UPLOAD -->
+<div id="excelUpload" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload Excel file</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="control-group" id="jsonupload">
+  					<label class="control-label" for="filebutton"></label>
+  					<div class="controls">
+    				<input id="filebutton" name="filebutton" class="file" type="file">
+  					</div>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="startUpload()">UPLOAD</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for jsonSelect -->
+<div id="jsonSelect" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Select JSON file</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="control-group" id="jsonupload">
+  					<label class="control-label" for="filebutton"></label>
+  					<div class="controls">
+    				<input id="filebutton" name="filebutton" class="file" type="file">
+  					</div>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="startUpload()">UPLOAD</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for excel select -->
+<div id="excelSelect" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Select Excel file</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="control-group" id="jsonupload">
+  					<label class="control-label" for="filebutton"></label>
+  					<div class="controls">
+    				<input id="filebutton" name="filebutton" class="file" type="file">
+  					</div>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="startUpload()">UPLOAD</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal for test create Ends-->
+
+<!-- Form : Create Test Ends -->				
+				
+				
+			</article>
+			</div>
+			<!-- /Article -->
+
+
+
+
+
+<!-- Article main content for saved files -->
+			<div id="savediv" style="display: none">
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h4 class="page-title">SAVED FILES</h4>
+				</header>
+				
+				
+			</article>
+			</div>
+			
+			<!-- /Article -->
+<!-- Article main content for history -->
+			<div id="historydiv" style="display: none">
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h4 class="page-title">HISTORY</h4>
+				</header>
+				
+				
+			</article>
+			</div>
+			<!-- /Article -->
+<!-- Article main content for EDIT PROFILE-->
+			<div id="editprofilediv" style="display: none">
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<b><h4 class="page-title">EDIT PROFILE</h4></b>
+				</header>
+				
+				
+			</article>
+			</div>
+			<!-- /Article -->
+<!-- Article main content for searcH -->
+			<div id="searchdiv" style="display: none">
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h4 class="page-title">SEARCH</h4>
+				</header>
+				
+				
+			</article>
+			</div>
+			<!-- /Article -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		</div>
 	</div>	<!-- /container -->
@@ -133,7 +385,7 @@
 							<p>+91-9538051387<br>
 								<a href="mailto:kdheeraj.cse@gmail.com">kdheeraj.cse@gmail.com</a><br>
 								<br>
-								Green garden layout, Kundallhalli Bangalore,  560025
+								Residency Road Bangalore,  560025
 							</p>	
 						</div>
 					</div>
@@ -203,5 +455,7 @@
 	<script src="assets/js/headroom.min.js"></script>
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
+	<script src="assets/custom-js/my.js"></script>
+	<script src="assets/upload-js/jquery.ajaxfileupload.js"></script>
 </body>
 </html>

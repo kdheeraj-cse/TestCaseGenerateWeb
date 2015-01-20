@@ -204,7 +204,7 @@
             	<div class="control-group" id="jsonupload">
   					<label class="control-label" for="filebutton"></label>
   					<div class="controls">
-    				<input id="filebutton" name="filebutton" class="file" type="file">
+    				<input id="uploadfile" name="uploadfile" class="file" type="file">
   					</div>
 				</div>
             </div>

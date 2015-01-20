@@ -56,16 +56,26 @@ function showExcelSelect() {
 	$("#excelSelect").modal('show');
 }
 
+var client = new XMLHttpRequest();
 function startUpload() {
-	console.log("inside upload");
-	$('input[type="file"]').ajaxfileupload({
-	       'action': 'doupload',            
-	   'onComplete': function(response) {         
-	         $('#upload').hide();
-	         alert("File SAVED!!");
-	       },
-	       'onStart': function() {
-	         $('#upload').show(); 
-	       }
-	  });
+	var file = document.getElementById("uploadfile");
+    
+    /* Create a FormData instance */
+    var formData = new FormData();
+    /* Add the file */ 
+    formData.append("upload", file.files[0]);
+
+    client.open("post", "/doupload", true);
+    client.setRequestHeader("Content-Type", "multipart/form-data");
+    client.send(formData);  /* Send to server */ 
+	
+	
+}
+
+client.onreadystatechange = function() 
+{
+   if (client.readyState == 4 && client.status == 200) 
+   {
+      alert(client.statusText);
+   }
 }

@@ -45,7 +45,10 @@ public class UploadFile extends HttpServlet {
                 while (iterator.hasNext()) {
                     FileItem item = (FileItem) iterator.next();
                     if (!item.isFormField()) {
-                        String fileName = item.getName();  
+                        String fileName = item.getName(); 
+                        
+                        System.out.println(fileName);
+                        
                         String root = getServletContext().getRealPath("/");
                         File path = new File(root + "/uploads");
                         System.out.println(path.toString());
